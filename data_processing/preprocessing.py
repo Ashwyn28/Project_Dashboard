@@ -8,10 +8,14 @@ from sklearn import preprocessing
 import matplotlib.pyplot as plt
 import random as rd
 
+# Loading data function 
+
 def load_data(data):
     data = pd.read_csv(data).values
 
     return data
+
+# Processing annotations function
 
 def seperate_annotations(annotation):
     annotations = annotation.values
@@ -33,6 +37,8 @@ def seperate_annotations(annotation):
     diary_entry = annotations[:][count_sleep + count_reaction_time: count_diary_entry + count_reaction_time]
 
     return stanford_sleep_levels, sleep_2_peak_reaction_time, diary_entry
+
+# Blocking function
 
 def seperate_data_to_sleep_levels(data1, data2, stanford_sleep_levels):
 
@@ -72,6 +78,8 @@ def seperate_data_to_sleep_levels(data1, data2, stanford_sleep_levels):
     sleep_levels = [sleep_level_01, sleep_level_02, sleep_level_03, sleep_level_04, sleep_level_05, sleep_level_06, sleep_level_07]
 
     return sleep_levels
+
+# Scaling function 
 
 def scale(data):
     data = preprocessing.scale(data)
