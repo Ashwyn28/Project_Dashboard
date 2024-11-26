@@ -41,4 +41,3 @@ To uninstall Anaconda and clean up all dependencies, follow the instructions her
 
 ### License
 [MIT License](LICENSE)
-```
